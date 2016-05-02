@@ -1,0 +1,43 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Microsoft.Samples.Kinect.BodyBasics.MainWindow"
+        Title="Body Basics" 
+        Height="600" Width="700" 
+        Loaded="MainWindow_Loaded"
+        Closing="MainWindow_Closing">
+    <Window.Resources>
+        <SolidColorBrush x:Key="MediumGreyBrush" Color="#ff6e6e6e" />
+        <SolidColorBrush x:Key="KinectPurpleBrush" Color="#ff52318f" />
+        <SolidColorBrush x:Key="KinectBlueBrush" Color="#ff00BCF2" />
+    </Window.Resources>
+    <Grid Margin="10 0 10 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Source="Images\Logo.png" HorizontalAlignment="Left" Stretch="Fill" Height="32" Width="81" Margin="0 10 0 5" />
+        <TextBlock Grid.Row="0" Margin="0 0 -1 0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="18"><Run Text="Body Basics"/></TextBlock>
+        <Image Grid.Row="0" Source="Images\Status.png" Stretch="None" HorizontalAlignment="Center" Margin="0 0 0 5" />
+
+
+
+
+        <Viewbox Grid.Row="1" HorizontalAlignment="Center" Margin="0 100 0 0" >
+            
+            <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
+        </Viewbox>
+
+        <StatusBar Grid.Row="2" HorizontalAlignment="Stretch" x:Name="statusBar" VerticalAlignment="Bottom" Background="White" Foreground="{StaticResource MediumGreyBrush}">
+            <StatusBarItem Content="{Binding StatusText}" />
+        </StatusBar>
+        <TextBlock Name="leftKneeAnkle" HorizontalAlignment="Left" Margin="31,37.8,0,0" Grid.Row="1" TextWrapping="NoWrap" Text="LeftKneeAnkle" VerticalAlignment="Top" Height="23" Width="400"/>
+        <TextBlock Name="leftThigh" HorizontalAlignment="Left" Margin="31,65.8,0,0" Grid.Row="1" TextWrapping="NoWrap" Text="LeftThigh" VerticalAlignment="Top" Height="23" Width="400"/>
+        <TextBlock x:Name="spineBase1" HorizontalAlignment="Left" Margin="31,93.8,0,0" Grid.Row="1" TextWrapping="NoWrap" Text="SpineBase" VerticalAlignment="Top" Height="23" Width="400"/>
+        <TextBlock x:Name="leftShoulderElbow" HorizontalAlignment="Left" Margin="31,116.8,0,0" Grid.Row="1" TextWrapping="NoWrap" Text="LeftShoulderElbow" VerticalAlignment="Top" Height="23" Width="400"/>
+        <TextBlock x:Name="height" HorizontalAlignment="Left" Margin="31,139.8,0,0" Grid.Row="1" TextWrapping="NoWrap" Text="Height" VerticalAlignment="Top" Height="23" Width="400"/>
+
+    </Grid>
+</Window>
